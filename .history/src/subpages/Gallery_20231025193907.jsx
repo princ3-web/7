@@ -108,7 +108,7 @@ const Gallery = ({ position }) => {
               pointerEvents: showPreview ? "auto" : "none",
               cursor: "pointer",
               transform: `translate(-50%, -50%) rotateX(${(window.innerHeight / 2 - position.y) / 25}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 50}deg)`,
+              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
                 perspective: "3000px",
                 transition: "0.5s",
                 transitionTimingFunction: "ease-out",
