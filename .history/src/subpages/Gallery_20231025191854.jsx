@@ -82,7 +82,7 @@ const Gallery = ({ position }) => {
                   width: "260px",
                   m: "0.3rem",
                   cursor: "pointer",
-                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 25}deg) 
+                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 50}deg) 
                 rotateY(${-(window.innerWidth / 2 - position.x) / 50}deg)`,
                   perspective: "3000px",
                   transition: "0.5s",
