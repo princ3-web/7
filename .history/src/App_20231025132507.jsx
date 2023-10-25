@@ -1,0 +1,38 @@
+import "./App.css";
+import { Box } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
+import Home from "./subpages/Home";
+import About from "./subpages/About";
+import Navbar from "./components/Navbar";
+import Subbar from "./components/Subbar";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+im
+
+function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Roboto Condensed, sans-serif",
+    },
+  });
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Box>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Subbar />
+      </Box>
+    </ThemeProvider>
+  );
+}
+
+export default App;
