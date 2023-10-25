@@ -58,34 +58,28 @@ const Home = ({ position }) => {
           zIndex: 3,
           width: "100%",
           height: "100%",
-          bottom: 0,
+          bottom: 0
         }}
       >
         <ParticleBackground settings={settings} />
       </Box>
       <Box
+      <Animated>
+      <CardMedia
+        component="img"
+        alt=""
+        src={image6}
         sx={{
           position: "absolute",
-          zIndex: 2,
           width: "60%",
+          zIndex: 2,
           bottom: "10%",
+          transform: `translate(calc(40% - ${position.x / 200}px), calc(-${position.y / 200}px))`,
+          transition: "0.5s",
+          transitionTimingFunction: "ease-out",
         }}
-      >
-        <Animated>
-          <CardMedia
-            component="img"
-            alt=""
-            src={image6}
-            sx={{
-              transform: `translate(calc(40% - ${position.x / 200}px), calc(-${
-                position.y / 200
-              }px))`,
-              transition: "0.5s",
-              transitionTimingFunction: "ease-out",
-            }}
-          />
-        </Animated>
-      </Box>
+      />
+      </Animated>
       <Box
         sx={{
           display: "flex",

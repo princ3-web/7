@@ -4,15 +4,21 @@ import { grey } from "@mui/material/colors";
 
 const Navbar = () => {
   const items = [
-    "HOME",
+    "OPTIMISED",
     "GALLERY",
-    "NEWS",
+    "FAQ",
+    "INDEPENDENT AAA",
     "DEVELOPER BLOG",
-    "COMMUNITY",
+    "MENTAL HEALTH SUPPORT",
     "SUPPORT",
     "BUY",
   ];
 
+  GAMES
+CAREERS
+NEWS
+COMMUNITY
+SUPPORT
   return (
     <Box
       sx={{

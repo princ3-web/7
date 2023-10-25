@@ -63,20 +63,19 @@ const Home = ({ position }) => {
       >
         <ParticleBackground settings={settings} />
       </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 2,
-          width: "60%",
-          bottom: "10%",
-        }}
-      >
+      <Box sx={{
+
+      }}>
         <Animated>
           <CardMedia
             component="img"
             alt=""
             src={image6}
             sx={{
+              
+              width: "60%",
+              zIndex: 2,
+              bottom: "10%",
               transform: `translate(calc(40% - ${position.x / 200}px), calc(-${
                 position.y / 200
               }px))`,

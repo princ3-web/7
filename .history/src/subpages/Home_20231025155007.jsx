@@ -8,7 +8,7 @@ import image6 from "../assets/images/6.png";
 import image7 from "../assets/images/7.png";
 import { grey } from "@mui/material/colors";
 import ParticleBackground from "react-particle-backgrounds";
-import Animated from "../components/Animated";
+import anima
 
 const Home = ({ position }) => {
   const settings = {
@@ -58,34 +58,25 @@ const Home = ({ position }) => {
           zIndex: 3,
           width: "100%",
           height: "100%",
-          bottom: 0,
+          bottom: 0
         }}
       >
         <ParticleBackground settings={settings} />
       </Box>
-      <Box
+      <CardMedia
+        component="img"
+        alt=""
+        src={image6}
         sx={{
           position: "absolute",
-          zIndex: 2,
           width: "60%",
+          zIndex: 2,
           bottom: "10%",
+          transform: `translate(calc(40% - ${position.x / 200}px), calc(-${position.y / 200}px))`,
+          transition: "0.5s",
+          transitionTimingFunction: "ease-out",
         }}
-      >
-        <Animated>
-          <CardMedia
-            component="img"
-            alt=""
-            src={image6}
-            sx={{
-              transform: `translate(calc(40% - ${position.x / 200}px), calc(-${
-                position.y / 200
-              }px))`,
-              transition: "0.5s",
-              transitionTimingFunction: "ease-out",
-            }}
-          />
-        </Animated>
-      </Box>
+      />
       <Box
         sx={{
           display: "flex",

@@ -4,7 +4,7 @@ import { grey } from "@mui/material/colors";
 
 const Navbar = () => {
   const items = [
-    "HOME",
+    "H",
     "GALLERY",
     "NEWS",
     "DEVELOPER BLOG",
