@@ -64,7 +64,7 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Typography
+          <Typography
             color={grey[100]}
             variant="h2"
             sx={{
@@ -76,7 +76,7 @@ const Gallery = ({ position }) => {
             }}
           >
             Gallery
-          </Typography> */}
+          </Typography>
           <Box
             sx={{
               display: "flex",

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, CardMedia } from "@mui/material";
 import Animated from "../components/Animated";
 import image1 from "../assets/images/7.png";
 import image2 from "../assets/images/8.jpg";
@@ -13,7 +13,6 @@ import image9 from "../assets/images/15.jpg";
 import image10 from "../assets/images/16.jpg";
 import image11 from "../assets/images/17.jpg";
 import image12 from "../assets/images/18.jpg";
-import { grey } from "@mui/material/colors";
 
 const Gallery = ({ position }) => {
   const images = [
@@ -33,7 +32,8 @@ const Gallery = ({ position }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [showPreview, toggleShowPreview] = useState(false);
 
-  console.log(window.innerHeight / 2 - position.y);
+  console.log(window.innerWidth / 2 - position.y);
+  console.log(window.innerHeight / 2 - position.x);
 
   return (
     <Box>
@@ -64,19 +64,7 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Typography
-            color={grey[100]}
-            variant="h2"
-            sx={{
-              transform: `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
-              perspective: "30px",
-              transition: "0.5s",
-              transitionTimingFunction: "ease-out",
-            }}
-          >
-            Gallery
-          </Typography> */}
+          <Typogra
           <Box
             sx={{
               display: "flex",

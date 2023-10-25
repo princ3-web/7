@@ -33,7 +33,8 @@ const Gallery = ({ position }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [showPreview, toggleShowPreview] = useState(false);
 
-  console.log(window.innerHeight / 2 - position.y);
+  console.log(window.innerWidth / 2 - position.y);
+  console.log(window.innerHeight / 2 - position.x);
 
   return (
     <Box>
@@ -64,19 +65,7 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Typography
-            color={grey[100]}
-            variant="h2"
-            sx={{
-              transform: `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
-              perspective: "30px",
-              transition: "0.5s",
-              transitionTimingFunction: "ease-out",
-            }}
-          >
-            Gallery
-          </Typography> */}
+          <Typography color={grey[]}>Gallery</Typography>
           <Box
             sx={{
               display: "flex",

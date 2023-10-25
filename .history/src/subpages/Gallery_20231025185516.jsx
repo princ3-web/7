@@ -64,19 +64,19 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Typography
+          <Typography
             color={grey[100]}
             variant="h2"
             sx={{
               transform: `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
-              perspective: "30px",
+            rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
+              perspective: "3000px",
               transition: "0.5s",
               transitionTimingFunction: "ease-out",
             }}
           >
             Gallery
-          </Typography> */}
+          </Typography>
           <Box
             sx={{
               display: "flex",
