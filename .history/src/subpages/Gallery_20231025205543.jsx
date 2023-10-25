@@ -88,6 +88,7 @@ const Gallery = ({ position }) => {
             }}
           >
             {images.map((item, n) => (
+              <Box sx={{ position:"relative", display: "flex", flexDirection: "column" }}>
                 <CardMedia
                   component="img"
                   alt=""
@@ -107,6 +108,7 @@ const Gallery = ({ position }) => {
                   }}
                 />
               
+              </Box>
             ))}
           </Box>
 

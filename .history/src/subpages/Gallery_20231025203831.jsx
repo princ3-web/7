@@ -65,20 +65,6 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Box sx={{ perspective: "300px" }}>
-            <Typography
-              variant="h2"
-              color={grey[100]}
-              sx={{
-                transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-            rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                transition: "0.5s",
-                transitionTimingFunction: "ease-out",
-              }}
-            >
-              Gallery
-            </Typography>
-          </Box> */}
           <Box
             sx={{
               display: "flex",
@@ -88,39 +74,30 @@ const Gallery = ({ position }) => {
             }}
           >
             {images.map((item, n) => (
-                <CardMedia
-                  component="img"
-                  alt=""
-                  src={item}
-                  sx={{
-                    width: "260px",
-                    m: "0.3rem",
-                    cursor: "pointer",
-                    transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-                rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                    transition: "0.5s",
-                    transitionTimingFunction: "ease-out",
-                  }}
-                  onClick={() => {
-                    setSelectedImage(n);
-                    toggleShowPreview(true);
-                  }}
-                />
-              
+              <CardMedia
+                component="img"
+                alt=""
+                src={item}
+                sx={{
+                  width: "260px",
+                  m: "0.3rem",
+                  cursor: "pointer",
+                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
+                rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
+                  transition: "0.5s",
+                  transitionTimingFunction: "ease-out",
+                }}
+                onClick={() => {
+                  setSelectedImage(n);
+                  toggleShowPreview(true);
+                }}
+              />
             ))}
           </Box>
 
-          <Box
-            sx={{
-              position: "absolute",
-              perspective: "1000px",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              pointerEvents: showPreview ? "auto" : "none",
-            }}
-            onClick={() => toggleShowPreview(false)}
-          >
+                
+          <Box sx={{ position: "absolute", perspective: "300px", top: "50%",
+                left: "50%", }}>
             <CardMedia
               component="img"
               alt=""
@@ -128,12 +105,17 @@ const Gallery = ({ position }) => {
               sx={{
                 opacity: showPreview ? 1 : 0,
                 width: "900px",
+                
+                pointerEvents: showPreview ? "auto" : "none",
                 cursor: "pointer",
-                transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
+                transform: `translate(-50%, -50%) rotateX(${
+                  (window.innerHeight / 2 - position.y) / 10
+                }deg) 
+              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
                 transition: "0.5s",
                 transitionTimingFunction: "ease-out",
               }}
+              onClick={() => toggleShowPreview(false)}
             />
           </Box>
         </Animated>

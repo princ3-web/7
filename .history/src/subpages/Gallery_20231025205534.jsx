@@ -88,6 +88,7 @@ const Gallery = ({ position }) => {
             }}
           >
             {images.map((item, n) => (
+              <Box sx={{ position:"relative", display: "flex", flexDirection: "column" }}>
                 <CardMedia
                   component="img"
                   alt=""
@@ -106,7 +107,21 @@ const Gallery = ({ position }) => {
                     toggleShowPreview(true);
                   }}
                 />
-              
+                <Typography
+                  variant="h6"
+                  color={grey[100]}
+                  sx={{
+                    bottom: 0,
+                    left: "25%",
+                    transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
+                    rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
+                    transition: "0.5s",
+                    transitionTimingFunction: "ease-out",
+                  }}
+                >
+                  Gallery
+                </Typography>
+              </Box>
             ))}
           </Box>
 

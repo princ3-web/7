@@ -62,23 +62,22 @@ const Gallery = ({ position }) => {
           width: "60%",
           left: "20%",
           bottom: "5%",
+          perspective:"10pox"
         }}
       >
         <Animated>
-          {/* <Box sx={{ perspective: "300px" }}>
-            <Typography
-              variant="h2"
-              color={grey[100]}
-              sx={{
-                transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
+          <Typography
+            variant="h2"
+            color={grey[100]}
+            sx={{
+              transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
             rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                transition: "0.5s",
-                transitionTimingFunction: "ease-out",
-              }}
-            >
-              Gallery
-            </Typography>
-          </Box> */}
+              transition: "0.5s",
+              transitionTimingFunction: "ease-out",
+            }}
+          >
+            Gallery
+          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -88,25 +87,24 @@ const Gallery = ({ position }) => {
             }}
           >
             {images.map((item, n) => (
-                <CardMedia
-                  component="img"
-                  alt=""
-                  src={item}
-                  sx={{
-                    width: "260px",
-                    m: "0.3rem",
-                    cursor: "pointer",
-                    transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
+              <CardMedia
+                component="img"
+                alt=""
+                src={item}
+                sx={{
+                  width: "260px",
+                  m: "0.3rem",
+                  cursor: "pointer",
+                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
                 rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                    transition: "0.5s",
-                    transitionTimingFunction: "ease-out",
-                  }}
-                  onClick={() => {
-                    setSelectedImage(n);
-                    toggleShowPreview(true);
-                  }}
-                />
-              
+                  transition: "0.5s",
+                  transitionTimingFunction: "ease-out",
+                }}
+                onClick={() => {
+                  setSelectedImage(n);
+                  toggleShowPreview(true);
+                }}
+              />
             ))}
           </Box>
 

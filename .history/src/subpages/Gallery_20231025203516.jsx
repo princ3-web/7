@@ -33,8 +33,9 @@ const Gallery = ({ position }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [showPreview, toggleShowPreview] = useState(false);
 
-  console.log(`rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
+  console.log( `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
   rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`);
+
 
   return (
     <Box>
@@ -65,77 +66,55 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
-          {/* <Box sx={{ perspective: "300px" }}>
-            <Typography
-              variant="h2"
-              color={grey[100]}
-              sx={{
-                transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-            rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                transition: "0.5s",
-                transitionTimingFunction: "ease-out",
-              }}
-            >
-              Gallery
-            </Typography>
-          </Box> */}
           <Box
             sx={{
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
-              perspective: "300px",
+              perspective:"300px"
             }}
           >
             {images.map((item, n) => (
-                <CardMedia
-                  component="img"
-                  alt=""
-                  src={item}
-                  sx={{
-                    width: "260px",
-                    m: "0.3rem",
-                    cursor: "pointer",
-                    transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-                rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                    transition: "0.5s",
-                    transitionTimingFunction: "ease-out",
-                  }}
-                  onClick={() => {
-                    setSelectedImage(n);
-                    toggleShowPreview(true);
-                  }}
-                />
-              
+              <CardMedia
+                component="img"
+                alt=""
+                src={item}
+                sx={{
+                  width: "260px",
+                  m: "0.3rem",
+                  cursor: "pointer",
+                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
+                rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
+                  transition: "0.5s",
+                  transitionTimingFunction: "ease-out",
+                }}
+                onClick={() => {
+                  setSelectedImage(n);
+                  toggleShowPreview(true);
+                }}
+              />
             ))}
           </Box>
-
-          <Box
+          <Box></Box>
+          <CardMedia
+            component="img"
+            alt=""
+            src={images[selectedImage]}
             sx={{
+              opacity: showPreview ? 1 : 0,
               position: "absolute",
-              perspective: "1000px",
-              top: "50%",
+              width: "900px",
+              top: "50%", 
               left: "50%",
-              transform: "translate(-50%, -50%)",
               pointerEvents: showPreview ? "auto" : "none",
-            }}
-            onClick={() => toggleShowPreview(false)}
-          >
-            <CardMedia
-              component="img"
-              alt=""
-              src={images[selectedImage]}
-              sx={{
-                opacity: showPreview ? 1 : 0,
-                width: "900px",
-                cursor: "pointer",
-                transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
-              rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
+              cursor: "pointer",
+              transform: `translate(-50%, -50%) rotateX(${(window.innerHeight / 2 - position.y) / 10}deg) 
+              rotateY(${-(window.innerWidth / 2 - position.x) / 20}deg)`,
                 transition: "0.5s",
                 transitionTimingFunction: "ease-out",
-              }}
-            />
-          </Box>
+            }}
+            onClick={() => toggleShowPreview(false)}
+          />
         </Animated>
       </Box>
     </Box>
