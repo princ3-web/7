@@ -134,7 +134,7 @@ const Gallery = ({ position }) => {
                   src="https://www.youtube.com/embed/Tsf5Wjb1uAM?si=apBBjUlRgQrN0as1"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share f"
                   allowfullscreen
                 ></iframe>
               </Box>

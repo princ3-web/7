@@ -56,36 +56,6 @@ const Gallery = ({ position }) => {
         }}
         onClick={() => toggleShowPreview(false)}
       />
-
-      <Box sx={{ position: "absolute", display: "flex", top: "60px", left: "300px", zIndex: 5 }}>
-        <Typography
-          variant="h4"
-          color={!media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
-          onClick={() => toggleMedia(false)}
-        >
-          Images
-        </Typography>
-        <Typography variant="h4" color={grey[100]} sx={{ mx: "0.25rem" }}>
-          /
-        </Typography>
-        <Typography
-          variant="h4"
-          color={media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
-          onClick={() => toggleMedia(true)}
-        >
-          Trailer
-        </Typography>
-      </Box>
       <Box
         sx={{
           display: "flex",
@@ -97,6 +67,17 @@ const Gallery = ({ position }) => {
         }}
       >
         <Animated>
+          <Box sx={{ display: "flex" }}>
+            <Typography variant="h5" color={!media ? grey[100] : grey[500]} sx={{cursor:"pointer", user-}} onClick={() => toggleMedia(false)}>
+              Images
+            </Typography>
+            <Typography variant="h5" color={grey[100]} sx={{ mx: "0.25rem" }}>
+              /
+            </Typography>
+            <Typography variant="h5" color={media ? grey[100] : grey[500]} onClick={() => toggleMedia(true)}>
+              Trailer
+            </Typography>
+          </Box>
           <Box
             sx={{
               display: "flex",
@@ -105,40 +86,26 @@ const Gallery = ({ position }) => {
               perspective: "300px",
             }}
           >
-            {!media &&
-              images.map((item, n) => (
-                <CardMedia
-                  component="img"
-                  alt=""
-                  src={item}
-                  sx={{
-                    width: "260px",
-                    m: "0.3rem",
-                    cursor: "pointer",
-                    transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
+            {images.map((item, n) => (
+              <CardMedia
+                component="img"
+                alt=""
+                src={item}
+                sx={{
+                  width: "260px",
+                  m: "0.3rem",
+                  cursor: "pointer",
+                  transform: `rotateX(${(window.innerHeight / 2 - position.y) / 30}deg) 
                 rotateY(${-(window.innerWidth / 2 - position.x) / 60}deg)`,
-                    transition: "0.5s",
-                    transitionTimingFunction: "ease-out",
-                  }}
-                  onClick={() => {
-                    setSelectedImage(n);
-                    toggleShowPreview(true);
-                  }}
-                />
-              ))}
-            {media && (
-              <Box sx={{ zIndex: 10, width: "960px", height: "540px", mb: "50px" }}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/Tsf5Wjb1uAM?si=apBBjUlRgQrN0as1"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </Box>
-            )}
+                  transition: "0.5s",
+                  transitionTimingFunction: "ease-out",
+                }}
+                onClick={() => {
+                  setSelectedImage(n);
+                  toggleShowPreview(true);
+                }}
+              />
+            ))}
           </Box>
 
           <Box

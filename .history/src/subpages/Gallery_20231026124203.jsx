@@ -57,35 +57,27 @@ const Gallery = ({ position }) => {
         onClick={() => toggleShowPreview(false)}
       />
 
-      <Box sx={{ position: "absolute", display: "flex", top: "60px", left: "300px", zIndex: 5 }}>
-        <Typography
-          variant="h4"
-          color={!media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
-          onClick={() => toggleMedia(false)}
-        >
-          Images
-        </Typography>
-        <Typography variant="h4" color={grey[100]} sx={{ mx: "0.25rem" }}>
-          /
-        </Typography>
-        <Typography
-          variant="h4"
-          color={media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
-          onClick={() => toggleMedia(true)}
-        >
-          Trailer
-        </Typography>
-      </Box>
+<Box sx={{ position: "absolute", display: "flex", top: "100px", le zIndex: 1 }}>
+          <Typography
+            variant="h5"
+            color={!media ? grey[100] : grey[500]}
+            sx={{ cursor: "pointer", userSelect: "none" }}
+            onClick={() => toggleMedia(false)}
+          >
+            Images
+          </Typography>
+          <Typography variant="h5" color={grey[100]} sx={{ mx: "0.25rem" }}>
+            /
+          </Typography>
+          <Typography
+            variant="h5"
+            color={media ? grey[100] : grey[500]}
+            sx={{ cursor: "pointer", userSelect: "none" }}
+            onClick={() => toggleMedia(true)}
+          >
+            Trailer
+          </Typography>
+        </Box>
       <Box
         sx={{
           display: "flex",
@@ -96,6 +88,8 @@ const Gallery = ({ position }) => {
           bottom: "5%",
         }}
       >
+        
+
         <Animated>
           <Box
             sx={{
@@ -126,19 +120,6 @@ const Gallery = ({ position }) => {
                   }}
                 />
               ))}
-            {media && (
-              <Box sx={{ zIndex: 10, width: "960px", height: "540px", mb: "50px" }}>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/Tsf5Wjb1uAM?si=apBBjUlRgQrN0as1"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </Box>
-            )}
           </Box>
 
           <Box

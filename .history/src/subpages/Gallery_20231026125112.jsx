@@ -127,10 +127,10 @@ const Gallery = ({ position }) => {
                 />
               ))}
             {media && (
-              <Box sx={{ zIndex: 10, width: "960px", height: "540px", mb: "50px" }}>
+              <Box sx={{ zIndex: 10, border: "5px solid red", width:"900px", height:"600px" }}>
                 <iframe
-                  width="100%"
-                  height="100%"
+                width="100%"
+                width="100%"
                   src="https://www.youtube.com/embed/Tsf5Wjb1uAM?si=apBBjUlRgQrN0as1"
                   title="YouTube video player"
                   frameborder="0"

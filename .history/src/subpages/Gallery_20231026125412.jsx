@@ -127,7 +127,7 @@ const Gallery = ({ position }) => {
                 />
               ))}
             {media && (
-              <Box sx={{ zIndex: 10, width: "960px", height: "540px", mb: "50px" }}>
+              <Box sx={{ zIndex: 10, width: "970px", height: "506px", mb: "50px" }}>
                 <iframe
                   width="100%"
                   height="100%"

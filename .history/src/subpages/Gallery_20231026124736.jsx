@@ -61,11 +61,7 @@ const Gallery = ({ position }) => {
         <Typography
           variant="h4"
           color={!media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
+          sx={{ cursor: "pointer", userSelect: "none", textShadow: '1px 1px 12px rgba(0, 0, 0, 1)', }}
           onClick={() => toggleMedia(false)}
         >
           Images
@@ -76,11 +72,7 @@ const Gallery = ({ position }) => {
         <Typography
           variant="h4"
           color={media ? grey[100] : grey[500]}
-          sx={{
-            cursor: "pointer",
-            userSelect: "none",
-            textShadow: "1px 1px 12px rgba(0, 0, 0, 1)",
-          }}
+          sx={{ cursor: "pointer", userSelect: "none", textShadow: '1px 1px 12px rgba(0, 0, 0, 1)', }}
           onClick={() => toggleMedia(true)}
         >
           Trailer
@@ -126,19 +118,19 @@ const Gallery = ({ position }) => {
                   }}
                 />
               ))}
-            {media && (
-              <Box sx={{ zIndex: 10, width: "960px", height: "540px", mb: "50px" }}>
+               {media &&
+               <Box></Box>
                 <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/Tsf5Wjb1uAM?si=apBBjUlRgQrN0as1"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </Box>
-            )}
+                title="My YouTube Video"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/watch?v=Tsf5Wjb1uAM"
+                frameBorder="0"
+                allowFullScreen
+                style={{ position: 'absolute', width: '100%', height: '100%' }}
+              ></iframe>
+              }
+              
           </Box>
 
           <Box
