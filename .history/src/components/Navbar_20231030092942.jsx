@@ -28,10 +28,10 @@ const Navbar = () => {
         <Link to={item.link} style={{ color: "unset", textDecoration: "none" }}>
           <Typography
             fontWeight={"bold"}
-            color={grey[400]}
+            color={grey[600]}
             sx={{
               mr: "1.25rem",
-              fontSize: "28px",
+              fontSize: "24px",
               ":hover": {
                 color: grey[100],
                 cursor: "pointer",

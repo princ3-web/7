@@ -31,7 +31,7 @@ const Navbar = () => {
             color={grey[400]}
             sx={{
               mr: "1.25rem",
-              fontSize: "28px",
+              fontSize: "24px",
               ":hover": {
                 color: grey[100],
                 cursor: "pointer",
